@@ -16,7 +16,6 @@
     
     <style>
         :root {
-            /* Premium Color Palette */
             --primary: #6366f1;
             --primary-light: #818cf8;
             --primary-dark: #4f46e5;
@@ -24,35 +23,23 @@
             --accent: #06b6d4;
             --success: #10b981;
             --warning: #f59e0b;
-            
-            /* Dark Theme */
             --bg-primary: #0a0a0f;
             --bg-secondary: #12121a;
             --bg-tertiary: #1a1a25;
             --bg-card: rgba(26, 26, 37, 0.6);
-            
-            /* Text */
             --text-primary: #f8fafc;
             --text-secondary: #94a3b8;
             --text-muted: #64748b;
-            
-            /* Glass Effects */
             --glass-bg: rgba(255, 255, 255, 0.03);
             --glass-border: rgba(255, 255, 255, 0.08);
             --glass-hover: rgba(255, 255, 255, 0.06);
-            
-            /* Shadows */
             --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
             --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.4);
             --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
             --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.3);
-            
-            /* Transitions */
             --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
             --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            
-            /* Spacing */
             --section-padding: 8rem;
         }
 
@@ -76,7 +63,6 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -94,18 +80,15 @@
             background: linear-gradient(180deg, var(--primary-light), var(--secondary));
         }
 
-        /* Selection */
         ::selection {
             background: rgba(99, 102, 241, 0.3);
             color: var(--text-primary);
         }
 
-        /* Typography */
         .font-mono {
             font-family: 'JetBrains Mono', monospace;
         }
 
-        /* Navigation */
         .nav {
             position: fixed;
             top: 0;
@@ -214,7 +197,6 @@
             cursor: pointer;
         }
 
-        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -400,7 +382,6 @@
             transform: translateX(4px);
         }
 
-        /* Floating Elements */
         .floating-orbs {
             position: absolute;
             inset: 0;
@@ -465,7 +446,6 @@
             50% { opacity: 0.4; }
         }
 
-        /* Section Styles */
         section {
             padding: var(--section-padding) 5%;
             position: relative;
@@ -503,7 +483,6 @@
             font-size: 1.125rem;
         }
 
-        /* About Section */
         .about {
             background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
         }
@@ -594,6 +573,11 @@
             animation: pulse 2s infinite;
         }
 
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
         .badge-label {
             font-size: 0.75rem;
             color: var(--text-muted);
@@ -605,10 +589,6 @@
             font-size: 1.25rem;
             font-weight: 700;
             color: var(--text-primary);
-        }
-
-        .about-content {
-            space-y: 2rem;
         }
 
         .about-text {
@@ -667,7 +647,6 @@
             color: var(--text-muted);
         }
 
-        /* Skills Section */
         .skills {
             background: var(--bg-secondary);
         }
@@ -725,10 +704,6 @@
             color: var(--text-muted);
         }
 
-        .skill-list {
-            space-y: 1rem;
-        }
-
         .skill-item {
             margin-bottom: 1.25rem;
         }
@@ -784,7 +759,6 @@
             100% { transform: translateX(100%); }
         }
 
-        /* Projects Section */
         .projects {
             background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
         }
@@ -830,7 +804,6 @@
             overflow: hidden;
             transition: var(--transition-base);
             position: relative;
-            group: true;
         }
 
         .project-card:hover {
@@ -926,8 +899,6 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             padding: 0.25rem 0.75rem;
-            background: rgba(99, 102, 241, 0.1);
-            color: var(--primary);
             border-radius: 50px;
         }
 
@@ -965,7 +936,6 @@
             font-family: 'JetBrains Mono', monospace;
         }
 
-        /* Education Section */
         .education {
             background: var(--bg-primary);
         }
@@ -1065,7 +1035,6 @@
             line-height: 1.6;
         }
 
-        /* Contact Section */
         .contact {
             background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
         }
@@ -1076,10 +1045,6 @@
             display: grid;
             grid-template-columns: 1fr 1.2fr;
             gap: 4rem;
-        }
-
-        .contact-info {
-            space-y: 2rem;
         }
 
         .contact-card {
@@ -1101,6 +1066,10 @@
             align-items: center;
             gap: 1.25rem;
             margin-bottom: 1.5rem;
+        }
+
+        .contact-method:last-child {
+            margin-bottom: 0;
         }
 
         .contact-icon-box {
@@ -1125,6 +1094,16 @@
         .contact-details p {
             color: var(--text-muted);
             font-size: 0.9375rem;
+        }
+
+        .contact-details a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: var(--transition-fast);
+        }
+
+        .contact-details a:hover {
+            color: var(--primary);
         }
 
         .social-grid {
@@ -1226,7 +1205,6 @@
             background: linear-gradient(135deg, var(--success), #059669);
         }
 
-        /* Footer */
         .footer {
             background: var(--bg-secondary);
             border-top: 1px solid var(--glass-border);
@@ -1290,7 +1268,107 @@
             50% { transform: scale(1.2); }
         }
 
-        /* Responsive */
+        .loader {
+            position: fixed;
+            inset: 0;
+            background: var(--bg-primary);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--glass-border);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 400px;
+            height: 100vh;
+            background: var(--bg-secondary);
+            padding: 6rem 2rem 2rem;
+            transition: right 0.3s ease;
+            z-index: 999;
+            border-left: 1px solid var(--glass-border);
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .mobile-nav-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1.25rem;
+            font-weight: 600;
+            display: block;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .mobile-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 998;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
         @media (max-width: 968px) {
             .nav-links {
                 display: none;
@@ -1369,110 +1447,6 @@
             .social-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-        }
-
-        /* Loading Animation */
-        .loader {
-            position: fixed;
-            inset: 0;
-            background: var(--bg-primary);
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: opacity 0.5s, visibility 0.5s;
-        }
-
-        .loader.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .loader-spinner {
-            width: 50px;
-            height: 50px;
-            border: 3px solid var(--glass-border);
-            border-top-color: var(--primary);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
-        /* Scroll Reveal */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Mobile Menu */
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 80%;
-            max-width: 400px;
-            height: 100vh;
-            background: var(--bg-secondary);
-            padding: 6rem 2rem 2rem;
-            transition: right 0.3s ease;
-            z-index: 999;
-            border-left: 1px solid var(--glass-border);
-        }
-
-        .mobile-menu.active {
-            right: 0;
-        }
-
-        .mobile-nav-links {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .mobile-nav-link {
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 1.25rem;
-            font-weight: 600;
-            display: block;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid var(--glass-border);
-        }
-
-        .mobile-close {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            background: none;
-            border: none;
-            color: var(--text-primary);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        .overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.5);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
-            z-index: 998;
-        }
-
-        .overlay.active {
-            opacity: 1;
-            visibility: visible;
         }
     </style>
 </head>
@@ -1556,7 +1530,7 @@
     <section class="about" id="about">
         <div class="section-header reveal">
             <span class="section-label">About Me</span>
-            <h2 class="section-title">Passionate Developer &<br>Continuous Learner</h2>
+            <h2 class="section-title">Passionate Developer &<br>Continuous Learner            </h2>
         </div>
         <div class="about-grid">
             <div class="about-visual reveal">
@@ -1923,7 +1897,7 @@
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="section-header reveal">
-            <span class="section-label">Contact</span>
+            <span class="section-label">Get In Touch</span>
             <h2 class="section-title">Let's Build Something Together</h2>
             <p class="section-desc">Have a project in mind? Let's discuss how we can work together</p>
         </div>
@@ -1936,11 +1910,20 @@
                         </div>
                         <div class="contact-details">
                             <h4>Email</h4>
-                            <p>nisalvimukthi@gmail.com</p>
+                            <p><a href="mailto:contact@nisalvimukthi.edu.lk">contact@nisalvimukthi.edu.lk</a></p>
                         </div>
                     </div>
                     <div class="contact-method">
                         <div class="contact-icon-box" style="background: linear-gradient(135deg, var(--accent), var(--primary));">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p><a href="tel:+94766437920">076 643 7920</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <div class="contact-icon-box" style="background: linear-gradient(135deg, var(--secondary), var(--warning));">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div class="contact-details">
@@ -1949,7 +1932,7 @@
                         </div>
                     </div>
                     <div class="contact-method">
-                        <div class="contact-icon-box" style="background: linear-gradient(135deg, var(--secondary), var(--warning));">
+                        <div class="contact-icon-box" style="background: linear-gradient(135deg, var(--success), var(--accent));">
                             <i class="fas fa-university"></i>
                         </div>
                         <div class="contact-details">
